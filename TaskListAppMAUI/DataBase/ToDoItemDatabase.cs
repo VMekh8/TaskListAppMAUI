@@ -10,9 +10,8 @@ namespace TaskListAppMAUI.DataBase
         async Task Init()
         {
             if (_dataBase is not null)
-            {
                 return;
-            }
+
             else
             {
                 _dataBase = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
