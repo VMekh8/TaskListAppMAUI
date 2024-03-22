@@ -1,4 +1,6 @@
-﻿namespace TaskListAppMAUI
+﻿using TaskListAppMAUI.View;
+
+namespace TaskListAppMAUI
 {
     public partial class App : Application
     {
@@ -6,7 +8,8 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new ToDoView();
         }
     }
 }
+    
