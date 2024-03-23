@@ -7,4 +7,132 @@
     <ContentPage.BindingContext>
         <local:ToDoViewModel/>
     </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ScrollView>
+        <ListView ItemsSource="{Binding ToDoModels}" RowHeight="85">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label 
+                                Text="{Binding Id}"
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                FontSize="Title"
+                                TextColor="#3f3f3f"
+                                Margin="5, 0, 0, 0"/>
+
+                            <Label
+                                Text="{Binding TaskName}"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                FontSize="Title"
+                                TextColor="#3f3f3f"
+                                Margin="-90, 0, 0, 0"/>
+
+                            <Label
+                                Text="Prority: "
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                HorizontalOptions="End"
+                                FontSize="Default"
+                                TextColor="#3f3f3f"
+                                Margin="0, 8, 15, 0"/>
+                            
+                            <Label
+                                Text="{Binding Prority}"
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                FontSize="Title"
+                                HorizontalOptions="End"
+                                TextColor="#3f3f3f"
+                                Margin="0, 0, 0, 0"/>
+                            
+                            
+                            <Label
+                                Text="{Binding Description}"
+                                Grid.Column="0"
+                                Grid.Row="1"
+                                MaxLines="1"
+                                TextColor="Gray"
+                                FontSize="Medium"
+                                Margin="3, 10, 0, 0"/>
+
+                            <Label
+                                Text="{Binding DeadLineDate}"
+                                Grid.Column="2"
+                                Grid.Row="1"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="Gray"
+                                FontSize="Medium"
+                                Margin="3, 10, 0, 0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </ScrollView>
+
+
+
+        <Border
+            Stroke="Black"
+            StrokeThickness="1"
+            Grid.Row="1">
+
+            <FlexLayout
+                Direction="Row"
+                JustifyContent="SpaceBetween"
+                AlignItems="Center">
+
+                <Button
+                    x:Name="AddTaskBtn"
+                    BackgroundColor="WhiteSmoke"
+                    WidthRequest="125"
+                    HeightRequest="70"
+                    Text="➕"
+                    FontSize="Large"
+                    TextColor="Black"
+                    Margin="3"/>
+
+                <Button
+                    x:Name="EditTaskBtn"
+                    BackgroundColor="WhiteSmoke"
+                    WidthRequest="125"
+                    HeightRequest="70"
+                    Text="✏️"
+                    FontSize="Large"
+                    TextColor="Black"
+                    Margin="3"/>
+
+                <Button
+                    x:Name="RemoveTaskBtn"
+                    BackgroundColor="WhiteSmoke"
+                    WidthRequest="125"
+                    HeightRequest="70"
+                    Text="🗑️"
+                    FontSize="Large"
+                    TextColor="Black"
+                    Margin="3"/>
+
+            </FlexLayout>
+        </Border>
+    </Grid>
 </ContentPage>

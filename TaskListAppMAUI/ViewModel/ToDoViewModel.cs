@@ -28,6 +28,7 @@ namespace TaskListAppMAUI.ViewModel
         {
             toDoModels = new ObservableCollection<ToDoModel>();
 
+
             ToDoModels.Add(new ToDoModel()
             {
                 Id = 1,

@@ -13,8 +13,7 @@ namespace TaskListAppMAUI.Model
 
         public  uint Prority { get; set; }
 
-        public DateTime DeadLineDate { get; set; }
+        public DateOnly DeadLineDate { get; set; }
 
-        public bool IsCompleted { get; set; }
     }
 }
