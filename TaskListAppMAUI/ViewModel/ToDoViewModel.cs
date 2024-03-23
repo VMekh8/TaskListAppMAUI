@@ -1,8 +1,6 @@
 ﻿
 
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using Microsoft.Maui.Controls.Platform;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using TaskListAppMAUI.DataBase;
@@ -16,6 +14,8 @@ namespace TaskListAppMAUI.ViewModel
 
         ObservableCollection<ToDoModel> toDoModels;
 
+        public ICommand OpenNewTaskWindow { get; }
+
         public ObservableCollection<ToDoModel> ToDoModels
         {
             get { return toDoModels; }
@@ -26,8 +26,11 @@ namespace TaskListAppMAUI.ViewModel
         {
             toDoModels = new ObservableCollection<ToDoModel>();
             
+            
         }
 
+
+       
         private async void RemoveItem(object sender, SelectedItemChangedEventArgs e)
         {
             var item = sender as ToDoModel;

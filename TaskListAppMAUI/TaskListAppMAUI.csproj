@@ -66,6 +66,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\AddNewTaskWindow.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\ToDoView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
