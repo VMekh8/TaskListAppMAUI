@@ -16,6 +16,7 @@ namespace TaskListAppMAUI.DataBase
             {
                 _dataBase = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
                 await _dataBase.CreateTableAsync<ToDoModel>();
+                Console.WriteLine(Constants.DatabasePath);
             }
         }
 

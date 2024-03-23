@@ -50,7 +50,7 @@
             Text="Task Priority: "/>
 
         <Picker 
-            x:Name="ProirityPicker"
+            x:Name="PriorityPicker"
             WidthRequest="150"
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center">

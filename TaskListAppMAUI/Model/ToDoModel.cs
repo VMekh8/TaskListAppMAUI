@@ -11,9 +11,9 @@ namespace TaskListAppMAUI.Model
 
         public string Description { get; set; }
 
-        public  uint Prority { get; set; }
+        public  int Prority { get; set; }
 
-        public DateOnly DeadLineDate { get; set; }
+        public DateTime DeadLineDate { get; set; }
 
     }
 }
