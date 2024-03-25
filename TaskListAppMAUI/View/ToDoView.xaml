@@ -11,7 +11,10 @@
         </Grid.RowDefinitions>
 
         <ScrollView>
-        <ListView ItemsSource="{Binding ToDoModels}" RowHeight="85">
+        <ListView 
+            ItemsSource="{Binding ToDoModels}" 
+            SelectedItem="{Binding SelectedItem}"
+            RowHeight="85">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -124,6 +127,8 @@
                     WidthRequest="125"
                     HeightRequest="70"
                     Text="🗑️"
+                    Command="{Binding RemoveItemCommand}"
+                    CommandParameter="{Binding SelectedItem}"
                     FontSize="Large"
                     TextColor="Black"
                     Margin="3"/>

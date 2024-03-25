@@ -30,15 +30,33 @@ namespace TaskListAppMAUI.ViewModel
             }
         }
 
+        private ToDoModel selectedItem;
+
+        public ToDoModel SelectedItem
+        {
+            get { return selectedItem; }
+            set { selectedItem = value; OnPropertyChanged(nameof(SelectedItem)); }
+        }
+
+
         public ToDoViewModel()
         {
             toDoModels = new ObservableCollection<ToDoModel>();
             LoadItemsAsync();
 
+            RemoveItemCommand = new Command<ToDoModel>(async (item) =>
+            {
+
+                await _db.DeleteItemAsync(item);
+                ToDoModels.Remove(item);
+                await LoadItemsAsync();
+
+            });
         }
 
         public async Task LoadItemsAsync()
         {
+            ToDoModels.Clear();
             var toDoItems = await _db.GetItemsAsync();
             foreach (var item in toDoItems)
             {
@@ -48,13 +66,5 @@ namespace TaskListAppMAUI.ViewModel
                 }
             }
         }
-
-        public async Task RemoveItemAsync(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = sender as ToDoModel;
-            await _db.DeleteItemAsync(item);
-        }
-
-
     }
 }
